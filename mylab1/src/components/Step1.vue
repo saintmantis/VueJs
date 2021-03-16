@@ -1,0 +1,185 @@
+<template>
+    <div>
+        <br><br><h2><center>Enter your information</center></h2>
+<form class="decor">
+			<div class="form-left-decoration"></div>
+			<div class="form-right-decoration"></div>
+			<div class="circle"></div>
+			<div class="form-inner">
+				<input input type="text" placeholder="Name">
+				<input type="text" placeholder="Email">
+				<textarea name="login2" type="text" placeholder="Contact Information" rows="3"></textarea>	
+			</div>
+		</form>
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'Step1',
+    data: function(){
+        return{
+            FirstName: "",
+            LastName: ""
+        }
+    },
+    methods:{
+        Accept: function(){
+            if((this.FirstName == "")||(this.LastName == ""))
+                this.Error = "Enter first or last name"
+        }
+    }
+}
+</script>
+
+<style scoped>
+.vInput{
+    width: 50%;
+}
+.Error{
+    color: red;
+}
+
+
+/* */
+
+
+* {
+	box-sizing: border-box;
+}
+
+
+.decor {
+	position: relative;
+	max-width: 400px;
+	margin: 50px auto 0;
+	background: white;
+	border-radius: 30px;
+}
+
+.form-left-decoration, .form-right-decoration {
+	content: "";
+	position: absolute;
+	width: 50px;
+	height: 20px;
+	background: #a463e5;
+	border-radius: 20px;
+}
+
+.form-left-decoration {
+	bottom: 60px;
+	left: -30px;
+}
+
+.form-right-decoration {
+	top: 60px;
+	right: -30px;
+}
+
+	.form-left-decoration:before, .form-left-decoration:after, .form-right-decoration:before, .form-right-decoration:after {
+		content: "";
+		position: absolute;
+		width: 50px;
+		height: 20px;
+		border-radius: 30px;
+		background: white;
+	}
+
+.form-left-decoration:before {
+	top: -20px;
+}
+
+.form-left-decoration:after {
+	top: 20px;
+	left: 10px;
+}
+
+.form-right-decoration:before {
+	top: -20px;
+	right: 0;
+}
+
+.form-right-decoration:after {
+	top: 20px;
+	right: 10px;
+}
+
+.circle {
+	position: absolute;
+	bottom: 80px;
+	left: -55px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: white;
+}
+
+.form-inner {
+	padding: 50px;
+}
+
+	.form-inner input, .form-inner textarea {
+		display: block;
+		width: 100%;
+		padding: 0 20px;
+		margin-bottom: 10px;
+		background: #E9EFF6;
+		line-height: 40px;
+		border-width: 0;
+		border-radius: 20px;
+		font-family: 'Roboto', sans-serif;
+	}
+
+		.form-inner input[type="submit"] {
+			margin-top: 30px;
+			background: #a463e5;
+			color: white;
+			font-size: 14px;
+		}
+
+	.form-inner textarea {
+		resize: none;
+	}
+
+	.form-inner h3 {
+		margin-top: 0;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 500;
+		font-size: 24px;
+		color: #6d6969;
+	}
+
+
+
+
+.pouring {
+	font-size: 40px;
+	line-height: 50px;
+	font-family: Verdana, sans-serif;
+	font-weight: 900;
+	position: relative;
+	background: white;
+	overflow: hidden;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.pouring:before {
+	content: '';
+	position: absolute;
+	filter: blur(10px);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	mix-blend-mode: screen;
+	background-image: repeating-linear-gradient(-45deg, transparent, transparent 1em, #BFE2FF 1em, #337AB7 50%), repeating-linear-gradient(45deg, #337AB7, #337AB7 1em, #FFF 1em, #BFE2FF 50%);
+	background-size: 3em 3em, 2em 2em;
+	animation-name: ani;
+	animation-duration: 10s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+</style>
